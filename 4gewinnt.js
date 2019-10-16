@@ -53,6 +53,8 @@ table.addEventListener("click",function(e){
 	}
 })
 
+
+
 playAgain.addEventListener("click", function(){location.reload()})
 
 
@@ -67,7 +69,12 @@ table.addEventListener("click",function(e){
 		}
 		if(winningMarkRed==4){
 			alert("Red wins!")
-			location.reload()
+			board.style.backgroundColor = "black"
+			board.style.borderColor = "black"
+			nowPlaying.innerHTML = "The End"
+			nowPlaying.style.backgroundColor = "grey"
+			tableClone = table.cloneNode(true)
+			table.parentNode.replaceChild(tableClone,table)
 		}
 	}
 })
@@ -81,7 +88,12 @@ table.addEventListener("click",function(e){
 		}
 		if(winningMarkYellow==4){
 			alert("Yellow wins!")
-			location.reload()
+			board.style.backgroundColor = "black"
+			board.style.borderColor = "black"
+			nowPlaying.innerHTML = "The End"
+			nowPlaying.style.backgroundColor = "grey"
+			tableClone = table.cloneNode(true)
+			table.parentNode.replaceChild(tableClone,table)
 		}
 	}
 })
@@ -100,8 +112,13 @@ table.addEventListener("click",function(e){
 			}
 			if(winningMarkRed==4){
 				alert("Red wins!")
-				location.reload()
-			}
+				board.style.backgroundColor = "black"
+				board.style.borderColor = "black"
+				nowPlaying.innerHTML = "The End"
+				nowPlaying.style.backgroundColor = "grey"
+				tableClone = table.cloneNode(true)
+				table.parentNode.replaceChild(tableClone,table)
+					}
 		}
 	}
 })
@@ -116,8 +133,13 @@ table.addEventListener("click",function(e){
 			}
 			if(winningMarkYellow==4){
 				alert("Yellow wins!")
-				location.reload()
-			}
+				board.style.backgroundColor = "black"
+				board.style.borderColor = "black"
+				nowPlaying.innerHTML = "The End"
+				nowPlaying.style.backgroundColor = "grey"
+				tableClone = table.cloneNode(true)
+				table.parentNode.replaceChild(tableClone,table)
+					}
 		}
 	}
 })
@@ -132,8 +154,13 @@ table.addEventListener("click",function(e){
 			&& table.childNodes[j-2].childNodes[i+2].style.backgroundColor == "red"
 			&& table.childNodes[j-3].childNodes[i+3].style.backgroundColor == "red"){
 				alert("Red wins!")
-				location.reload()
-			}
+				board.style.backgroundColor = "black"
+				board.style.borderColor = "black"
+				nowPlaying.innerHTML = "The End"
+				nowPlaying.style.backgroundColor = "grey"
+				tableClone = table.cloneNode(true)
+				table.parentNode.replaceChild(tableClone,table)
+					}
 		}
 	}
 })
@@ -145,8 +172,13 @@ table.addEventListener("click",function(e){
 			&& table.childNodes[j-2].childNodes[i+2].style.backgroundColor == "yellow"
 			&& table.childNodes[j-3].childNodes[i+3].style.backgroundColor == "yellow"){
 				alert("Yellow wins!")
-				location.reload()
-			}
+				board.style.backgroundColor = "black"
+				board.style.borderColor = "black"
+				nowPlaying.innerHTML = "The End"
+				nowPlaying.style.backgroundColor = "grey"
+				tableClone = table.cloneNode(true)
+				table.parentNode.replaceChild(tableClone,table)
+					}
 		}
 	}
 })
@@ -158,8 +190,13 @@ table.addEventListener("click",function(e){
 			&& table.childNodes[j-2].childNodes[i-2].style.backgroundColor == "red"
 			&& table.childNodes[j-3].childNodes[i-3].style.backgroundColor == "red"){
 				alert("Red wins!")
-				location.reload()
-			}
+				board.style.backgroundColor = "black"
+				board.style.borderColor = "black"
+				nowPlaying.innerHTML = "The End"
+				nowPlaying.style.backgroundColor = "grey"
+				tableClone = table.cloneNode(true)
+				table.parentNode.replaceChild(tableClone,table)
+					}
 		}
 	}
 })
@@ -171,7 +208,35 @@ table.addEventListener("click",function(e){
 			&& table.childNodes[j-2].childNodes[i-2].style.backgroundColor == "yellow"
 			&& table.childNodes[j-3].childNodes[i-3].style.backgroundColor == "yellow"){
 				alert("Yellow wins!")
-				location.reload()
+				board.style.backgroundColor = "black"
+				board.style.borderColor = "black"
+				nowPlaying.innerHTML = "The End"
+				nowPlaying.style.backgroundColor = "grey"
+				tableClone = table.cloneNode(true)
+				table.parentNode.replaceChild(tableClone,table)
+					}
+		}
+	}
+})
+
+
+table.addEventListener("click",function(e){
+	let drawNr = 0
+	for(j=5;j>=0;j--){
+		for(i=0;i<7;i++){
+			if(table.childNodes[j].childNodes[i].style.backgroundColor == "red"
+			|| table.childNodes[j].childNodes[i].style.backgroundColor == "yellow"){
+				drawNr++
+				console.log(drawNr)
+				if(drawNr==42){
+					alert("Draw!")
+					board.style.backgroundColor = "black"
+					board.style.borderColor = "black"
+					nowPlaying.innerHTML = "The End"
+					nowPlaying.style.backgroundColor = "grey"
+					tableClone = table.cloneNode(true)
+					table.parentNode.replaceChild(tableClone,table)
+				}
 			}
 		}
 	}
