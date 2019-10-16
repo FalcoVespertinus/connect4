@@ -2,11 +2,14 @@ body {
 	background-color: dimgrey;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	color: white;
+	font-size: 1em;
 }
 
 h1 {
+	font-family: 'Segoe Script';
+	font-size: 4rem;
 	text-align: center;
-	text-decoration: underline;
+	margin-bottom: -20px;
 }
 
 h4 {
