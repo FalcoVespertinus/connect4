@@ -36,6 +36,12 @@ document.body.appendChild(board)
 document.body.appendChild(playAgain)
 board.appendChild(table)
 
+playAgain.addEventListener("click", function(){location.reload()})
+
+
+
+
+
 table.addEventListener("click",function(e){
 	for(i=5;i>=0;i--){
 		if(table.childNodes[i].childNodes[e.target.cellIndex].style.backgroundColor !== "red" && 
@@ -54,8 +60,6 @@ table.addEventListener("click",function(e){
 })
 
 
-
-playAgain.addEventListener("click", function(){location.reload()})
 
 
 
@@ -97,6 +101,8 @@ table.addEventListener("click",function(e){
 		}
 	}
 })
+
+
 
 
 
@@ -143,6 +149,8 @@ table.addEventListener("click",function(e){
 		}
 	}
 })
+
+
 
 
 
@@ -218,6 +226,9 @@ table.addEventListener("click",function(e){
 		}
 	}
 })
+
+
+
 
 
 table.addEventListener("click",function(e){
