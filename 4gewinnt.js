@@ -15,7 +15,7 @@ let board = document.createElement("div")
 board.setAttribute("class","board")
 
 let table = document.createElement("table")
-table.setAttribute("class","grid")
+table.setAttribute("class","table")
 
 let playerColor = "red"
 
@@ -54,3 +54,125 @@ table.addEventListener("click",function(e){
 })
 
 playAgain.addEventListener("click", function(){location.reload()})
+
+
+
+table.addEventListener("click",function(e){
+	let winningMarkRed = 0
+	for(i=5;i>=0;i--){
+		if(table.childNodes[i].childNodes[e.target.cellIndex].style.backgroundColor == "red"){
+			winningMarkRed++
+		} else{
+			winningMarkRed = 0
+		}
+		if(winningMarkRed==4){
+			alert("Red wins!")
+			location.reload()
+		}
+	}
+})
+table.addEventListener("click",function(e){
+	let winningMarkYellow = 0
+	for(i=5;i>=0;i--){
+		if(table.childNodes[i].childNodes[e.target.cellIndex].style.backgroundColor == "yellow"){
+			winningMarkYellow++
+		} else{
+			winningMarkYellow = 0
+		}
+		if(winningMarkYellow==4){
+			alert("Yellow wins!")
+			location.reload()
+		}
+	}
+})
+
+
+
+table.addEventListener("click",function(e){
+	console.log(e)
+	let winningMarkRed = 0
+	for(j=5;j>=0;j--){
+		for(i=0;i<7;i++){
+			if(table.childNodes[j].childNodes[i].style.backgroundColor == "red"){
+				winningMarkRed++
+			} else{
+				winningMarkRed = 0
+			}
+			if(winningMarkRed==4){
+				alert("Red wins!")
+				location.reload()
+			}
+		}
+	}
+})
+table.addEventListener("click",function(e){
+	let winningMarkYellow = 0
+	for(j=5;j>=0;j--){
+		for(i=0;i<7;i++){
+			if(table.childNodes[j].childNodes[i].style.backgroundColor == "yellow"){
+				winningMarkYellow++
+			} else{
+				winningMarkYellow = 0
+			}
+			if(winningMarkYellow==4){
+				alert("Yellow wins!")
+				location.reload()
+			}
+		}
+	}
+})
+
+
+
+table.addEventListener("click",function(e){
+	for(j=5;j>=0;j--){
+		for(i=0;i<7;i++){
+			if(table.childNodes[j].childNodes[i].style.backgroundColor == "red" 
+			&& table.childNodes[j-1].childNodes[i+1].style.backgroundColor == "red" 
+			&& table.childNodes[j-2].childNodes[i+2].style.backgroundColor == "red"
+			&& table.childNodes[j-3].childNodes[i+3].style.backgroundColor == "red"){
+				alert("Red wins!")
+				location.reload()
+			}
+		}
+	}
+})
+table.addEventListener("click",function(e){
+	for(j=5;j>=0;j--){
+		for(i=0;i<7;i++){
+			if(table.childNodes[j].childNodes[i].style.backgroundColor == "yellow" 
+			&& table.childNodes[j-1].childNodes[i+1].style.backgroundColor == "yellow" 
+			&& table.childNodes[j-2].childNodes[i+2].style.backgroundColor == "yellow"
+			&& table.childNodes[j-3].childNodes[i+3].style.backgroundColor == "yellow"){
+				alert("Yellow wins!")
+				location.reload()
+			}
+		}
+	}
+})
+table.addEventListener("click",function(e){
+	for(j=5;j>=0;j--){
+		for(i=0;i<7;i++){
+			if(table.childNodes[j].childNodes[i].style.backgroundColor == "red" 
+			&& table.childNodes[j-1].childNodes[i-1].style.backgroundColor == "red" 
+			&& table.childNodes[j-2].childNodes[i-2].style.backgroundColor == "red"
+			&& table.childNodes[j-3].childNodes[i-3].style.backgroundColor == "red"){
+				alert("Red wins!")
+				location.reload()
+			}
+		}
+	}
+})
+table.addEventListener("click",function(e){
+	for(j=5;j>=0;j--){
+		for(i=0;i<7;i++){
+			if(table.childNodes[j].childNodes[i].style.backgroundColor == "yellow" 
+			&& table.childNodes[j-1].childNodes[i-1].style.backgroundColor == "yellow" 
+			&& table.childNodes[j-2].childNodes[i-2].style.backgroundColor == "yellow"
+			&& table.childNodes[j-3].childNodes[i-3].style.backgroundColor == "yellow"){
+				alert("Yellow wins!")
+				location.reload()
+			}
+		}
+	}
+})
