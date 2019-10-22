@@ -47,7 +47,7 @@ function gameEnd(alertText){
 	nowPlaying.style.backgroundColor = "grey"
 	tableClone = table.cloneNode(true)
 	table.parentNode.replaceChild(tableClone,table)
-	setTimeout(function(){ alert(alertText); }, 100);
+	setTimeout(function(){ alert(alertText); }, 1);
 }
 
 function getColorOfCell(i,e){
