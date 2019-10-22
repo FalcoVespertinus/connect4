@@ -41,13 +41,13 @@ playAgain.addEventListener("click", function(){
 })
 
 function gameEnd(alertText){
-	alert(alertText)
 	board.style.backgroundColor = "black"
 	board.style.borderColor = "black"
 	nowPlaying.innerHTML = "The End"
 	nowPlaying.style.backgroundColor = "grey"
 	tableClone = table.cloneNode(true)
 	table.parentNode.replaceChild(tableClone,table)
+	setTimeout(function(){ alert(alertText); }, 100);
 }
 
 function getColorOfCell(i,e){
