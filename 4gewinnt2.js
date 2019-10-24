@@ -4,11 +4,14 @@ let gameState = newGame()
 function dropAChip(x){
 	for(let y=5;y>=0;y--){
 		if(gameState.table[y][x] == 0){
-			gameState.table[y][x] = playerNr
-			if(playerNr == 1){
-				playerNr = 2
+			gameState.table[y][x] = gameState.playerNr
+			if(winCheck(gameState.playerNr)){
+				gameState.winner = gameState.playerNr
+			}
+			if(gameState.playerNr == 1){
+				gameState.playerNr = 2
 			}else{
-				playerNr = 1
+				gameState.playerNr = 1
 			}
 			break
 		}
@@ -63,13 +66,6 @@ function winCheck(player){
 	}
 }
 
-function winner(){
-	for(let i=1;i<3;i++){
-		if(winCheck(i)){
-			console.log(`Player ${i} won!`)
-		}
-	}
-}
 
 function newGame(){
 	return {
@@ -78,9 +74,12 @@ function newGame(){
 				[0,0,0,0,0,0,0],
 				[0,0,0,0,0,0,0],
 				[0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0]],
+				[0,0,1,1,1,0,0]],
 		playerNr: 1,
+		winner: 0
 	}
 }
 
-console.log(gameState.table)
+dropAChip(5)
+
+console.log(gameState)
