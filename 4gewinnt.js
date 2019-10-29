@@ -41,7 +41,7 @@ playAgain.addEventListener("click", function(){
 })
 
 function gameEnd(alertText){
-	alert(alertText)
+	setTimeout(function(){alert(alertText)},1)
 	board.style.backgroundColor = "black"
 	board.style.borderColor = "black"
 	nowPlaying.innerHTML = "The End"
